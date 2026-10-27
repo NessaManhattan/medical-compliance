@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Evidence Records</title>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="records-page">
+    <h1>Evidence Records</h1>
+
+    <p class="muted">
+        These records are stored in the local SQLite database.
+        Uploaded documents themselves are not stored.
+    </p>
+
+    <p><a href="/">← Back to dashboard</a></p>
+
+    <div id="records" aria-live="polite">Loading records...</div>
+
+    <script src="{{ url_for('static', filename='js/evidence.js') }}"
+            defer></script>
+</body>
+</html>

@@ -1,0 +1,7 @@
+.vs/
+__pycache__/
+*.pyc
+.env
+.venv/
+devnet-keypair.json
+clarity.db

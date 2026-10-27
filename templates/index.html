@@ -1,0 +1,350 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clarity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" type="image/png"
+          href="{{ url_for('static', filename='favicon.png') }}">
+</head>
+
+<body>
+    <div class="app">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-icon">✳</div>
+                <div>
+                    <div class="brand-name">clarity</div>
+                    <div class="brand-subtitle">Practice Security</div>
+                </div>
+            </div>
+
+            <nav>
+                <div class="nav-label">Workspace</div>
+
+                <a href="#dashboard" class="nav-item active">
+                    <span class="nav-icon">▦</span>
+                    Overview
+                </a>
+
+                <a href="#checklist" class="nav-item">
+                    <span class="nav-icon">☷</span>
+                    Compliance Checklist
+                </a>
+
+                <a href="#evidence-vault" class="nav-item">
+                    <span class="nav-icon">▤</span>
+                    Evidence Records
+                </a>
+
+                <a href="#information" class="nav-item">
+                    <span class="nav-icon">ⓘ</span>
+                    Guidance
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="profile">
+                    <div class="avatar">DP</div>
+                    <div>
+                        <div class="profile-name">Demo Practice</div>
+                        <div class="profile-type">Demo Workspace</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main" id="dashboard">
+
+            <header class="topbar">
+                <div class="breadcrumb">
+                    Workspace / <span>Overview</span>
+                </div>
+
+                <div class="topbar-right">
+                    <div class="secure-label">
+                        <span class="secure-dot"></span>
+                        Workspace
+                    </div>
+                    <div class="date-label" id="today"></div>
+                </div>
+            </header>
+
+            <section>
+                <div class="eyebrow">Your Compliance Workspace</div>
+
+                <h1>Helping Practice Compliance</h1>
+
+                <p class="intro">
+                    Understand your security tasks, keep track of what has been
+                    completed and maintain evidence of your work.
+                </p>
+            </section>
+
+            <section class="overview" aria-label="Compliance overview">
+
+                <div class="stat-card">
+                    <div class="stat-label">Checklist Progress</div>
+                    <div class="stat-number">
+                        <span id="completed-count">0</span>
+                        <span style="color:#a1adb7;font-size:18px;font-weight:400">
+                            / 3 tasks
+                        </span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="stat-caption" id="progress-caption">
+                        The first step towards better security
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-label">Tasks Remaining</div>
+                    <div class="stat-number" id="remaining-count">3</div>
+                    <div class="stat-caption">Items in your current checklist</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-label">Evidence Records</div>
+                    <div class="stat-number" id="evidence-count">0</div>
+                    <div class="stat-caption">Saved Evidence Records</div>
+                </div>
+
+            </section>
+            <section id="checklist">
+                <div class="section-heading">
+                    <div>
+                        <h2>Compliance Checklist</h2>
+                        <div class="section-subtitle">
+                            Small & Manageable steps towards better security
+                        </div>
+                    </div>
+
+                    <div class="filter-label">Illustrative Checklist</div>
+                </div>
+
+                <div class="task-list">
+
+                    <!-- Task 1 -->
+                    <article class="task-card" data-task="1">
+                        <div class="task-main">
+                            <input class="task-check"
+                                   type="checkbox"
+                                   id="task-1"
+                                   aria-label="Mark employee access review as complete">
+
+                            <div class="task-content">
+                                <div class="task-title">Review Employee Access Rights</div>
+
+                                <div class="task-description">
+                                    Check who can access practice systems and patient
+                                    information. Confirm that permissions are appropriate
+                                    for each person's role.
+                                </div>
+
+                                <div class="task-meta">
+                                    <span class="category">Access Management</span>
+                                    <span class="status" id="status-1">Not completed</span>
+                                </div>
+                            </div>
+
+                            <div class="task-actions">
+                                <span class="evidence-icon" title="Evidence Record">▤</span>
+                                <button class="guidance-btn" data-guidance="1"
+                                        aria-expanded="false">
+                                    View guidance ↓
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="guidance" id="guidance-1">
+                            <strong>What To Do</strong>
+                            <p>
+                                Review current user accounts and their permissions.
+                                Remove access that is no longer needed and document
+                                when the review took place and what measures have been
+                                taken.
+                            </p>
+                            <strong>Example Evidence</strong>
+                            <p>
+                                A dated access-review record. Avoid including passwords
+                                or unnecessary patient information.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Task 2 -->
+                    <article class="task-card" data-task="2">
+                        <div class="task-main">
+                            <input class="task-check"
+                                   type="checkbox"
+                                   id="task-2"
+                                   aria-label="Mark backup review as complete">
+
+                            <div class="task-content">
+                                <div class="task-title">Check Backups & Recovery</div>
+
+                                <div class="task-description">
+                                    Review whether important practice data is backed up
+                                    and whether there is a documented process for restoring
+                                    it if systems fail.
+                                </div>
+
+                                <div class="task-meta">
+                                    <span class="category">Business Continuity</span>
+                                    <span class="status" id="status-2">Not completed</span>
+                                </div>
+                            </div>
+
+                            <div class="task-actions">
+                                <span class="evidence-icon" title="Evidence Record">▤</span>
+                                <button class="guidance-btn" data-guidance="2"
+                                        aria-expanded="false">
+                                    View guidance ↓
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="guidance" id="guidance-2">
+                            <strong>What To Do</strong>
+                            <p>
+                                Confirm that backups are running, check who is
+                                responsible for them and review whether restoration
+                                has been tested.
+                            </p>
+                            <strong>Example Evidence</strong>
+                            <p>
+                                A dated backup-review checklist or a record of a
+                                successful restoration test.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Task 3 -->
+                    <article class="task-card" data-task="3">
+                        <div class="task-main">
+                            <input class="task-check"
+                                   type="checkbox"
+                                   id="task-3"
+                                   aria-label="Mark security awareness review as complete">
+
+                            <div class="task-content">
+                                <div class="task-title">Document Security Awareness Training</div>
+
+                                <div class="task-description">
+                                    Keep track of relevant security guidance provided to
+                                    staff, such as recognising phishing attempts and
+                                    handling sensitive information.
+                                </div>
+
+                                <div class="task-meta">
+                                    <span class="category">People & Awareness</span>
+                                    <span class="status" id="status-3">Not completed</span>
+                                </div>
+                            </div>
+
+                            <div class="task-actions">
+                                <span class="evidence-icon" title="Evidence Record">▤</span>
+                                <button class="guidance-btn" data-guidance="3"
+                                        aria-expanded="false">
+                                    View guidance ↓
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="guidance" id="guidance-3">
+                            <strong>What To Do</strong>
+                            <p>
+                                Identify relevant training needs and record what training
+                                was provided, when it took place and who participated.
+                            </p>
+                            <strong>Example evidence</strong>
+                            <p>
+                                A dated training log or attendance record, stored securely
+                                with access restricted to authorised personnel.
+                            </p>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <section class="evidence-vault" id="evidence-vault">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">DOCUMENTATION</p>
+                        <h2>Evidence Vault</h2>
+                        <p><a href="/evidence-records">View Evidence Records &amp; Verify Files</a></p>
+                        <p>
+                            Create a tamper-evident fingerprint of a security document.
+                            Your document is not stored by Clarity.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="evidence-upload">
+                    <label for="evidence-file">Select an evidence file</label>
+                    <input type="file"
+                           id="evidence-file"
+                           accept=".pdf,.txt,.csv,.doc,.docx,.xlsx,.png,.jpg,.jpeg">
+
+                    <label for="evidence-memo">Memo (optional)</label>
+                    <textarea id="evidence-memo"
+                        name="memo"
+                        maxlength="1000"
+                        placeholder="Describe this evidence or explain any changes."></textarea>
+
+                    <button type="button" id="create-evidence-button">
+                        Create evidence record
+                    </button>
+
+                    <p id="evidence-message" role="status">
+                        Select a sample document to get started
+                    </p>
+                </div>
+
+                <div id="evidence-result" hidden>
+                    <h3>Evidence Fingerprint Created</h3>
+                    <p><strong>File:</strong> <span id="evidence-filename"></span></p>
+                    <p><strong>SHA-256 hash:</strong></p>
+                    <code id="evidence-hash" class="evidence-hash"></code>
+                    <p id="evidence-blockchain-status"></p>
+                </div>
+
+                <div class="evidence-records">
+                    <h3>Saved evidence records</h3>
+                    <div id="evidence-list">
+                        <p>Loading Records...</p>
+                    </div>
+                </div>
+                <p>
+                </p>
+            </section>
+
+            <section class="info-panel" id="information">
+                <div class="info-symbol">ⓘ</div>
+                <div>
+                    <div class="info-title">Understand what your records can demonstrate</div>
+                    <div class="info-text">
+                        Keeping dated evidence can help a practice explain its security
+                        activities. Cryptographic hashes recorded on Solana could help verify
+                        whether evidence matches a version committed earlier. A matching hash
+                        does not, by itself, establish that a practice was legally compliant.
+                        This demonstration does not validate legal requirements.
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer">
+                <span>Clarity · Practice Security</span>
+                <span>Prototype · Demo only</span>
+            </footer>
+
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}" defer></script>
+</body>
+</html>
